@@ -201,9 +201,46 @@
         </section>
 
         <section style="margin-top:12px">
-          <label for="datetime">희망 상담일시</label>
-          <input id="datetime" name="희망 상담일시" type="datetime-local" />
-        </section>
+  <label for="date">희망 상담일시</label>
+  <div class="grid grid-2" style="gap:10px; align-items:center;">
+    <!-- 날짜 -->
+    <input id="date" name="상담일" type="date" required />
+
+    <!-- 시간 선택 -->
+    <div style="display:flex; gap:6px; align-items:center;">
+      <!-- 시 -->
+      <select id="hour" name="상담_시" required style="padding:10px 12px; border-radius:8px; border:1px solid #ccc;">
+        <option value="">시</option>
+        <option>01</option>
+        <option>02</option>
+        <option>03</option>
+        <option>04</option>
+        <option>05</option>
+        <option>06</option>
+        <option>07</option>
+        <option>08</option>
+        <option>09</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+
+      <!-- 분 -->
+      <select id="minute" name="상담_분" required style="padding:10px 12px; border-radius:8px; border:1px solid #ccc;">
+        <option value="">분</option>
+        <option>00</option>
+        <option>30</option>
+      </select>
+
+      <!-- 오전/오후 -->
+      <select id="ampm" name="상담_AMPM" required style="padding:10px 12px; border-radius:8px; border:1px solid #ccc;">
+        <option value="">오전/오후</option>
+        <option>오전</option>
+        <option>오후</option>
+      </select>
+    </div>
+  </div>
+</section>
 
         <section style="margin-top:12px">
           <label for="notes">기타 문의사항</label>
@@ -211,21 +248,27 @@
         </section>
 
         <!-- 개인정보 동의 -->
-        <section style="margin-top:14px">
-          <div class="policy">
-            <strong>개인정보 수집 및 이용 동의 (필수)</strong>
-            <ul style="margin:8px 0 0 18px">
-              <li>수집항목: 이메일, 성명, 휴대폰, 성별, 카카오톡 아이디(선택), 관심분야, 상담 방식, 희망 상담일시, 기타 문의사항</li>
-              <li>수집목적: 상담 신청 접수 및 안내</li>
-              <li>보유기간: 목적 달성 후 지체 없이 파기</li>
-            </ul>
-          </div>
-          <div class="row" style="margin-top:10px">
-            <input id="agree" name="개인정보동의" type="checkbox" required />
-            <label for="agree" class="req" style="margin:0;font-weight:500">개인정보동의서에 동의합니다.</label>
-            <a href="privacy.html" target="_blank" rel="noopener" style="margin-left:auto;font-size:14px">자세히 보기</a>
-          </div>
-        </section>
+<section style="margin-top:14px">
+  <div class="policy">
+    <strong>개인정보 수집 및 이용 동의 (필수)</strong>
+    <ul style="margin:8px 0 0 18px">
+      <li>수집항목: 이메일, 성명, 휴대폰, 성별, 카카오톡 아이디(선택), 관심분야, 상담 방식, 희망 상담일시, 기타 문의사항</li>
+      <li>수집목적: 상담 신청 접수 및 안내</li>
+    </ul>
+  </div>
+
+  <!-- 한 줄 정렬 + 체크박스 크기 보정 -->
+  <div class="row" style="margin-top:10px; align-items:center; gap:6px; flex-wrap:nowrap;">
+    <input id="agree" name="개인정보동의" type="checkbox" required
+           style="width:16px;height:16px;vertical-align:middle;cursor:pointer;margin:0;" />
+    <label for="agree" class="req"
+           style="margin:0; font-weight:600; white-space:nowrap; cursor:pointer;">
+      개인정보동의서에 동의합니다.
+    </label>
+    <a href="privacy.html" target="_blank" rel="noopener"
+       style="font-size:14px; margin-left:6px; white-space:nowrap;">자세히 보기</a>
+  </div>
+</section>
 
         <div class="row" style="margin-top:18px">
           <button id="submitBtn" type="submit" class="btn btn-primary">작성완료</button>
@@ -235,13 +278,17 @@
   </div>
 
   <!-- 하단 연락처 박스 -->
-  <div class="foot">
-    <div class="box">
-      <div style="font-weight:700;margin-bottom:6px">영국유학센터 신촌지사</div>
-      <div>서울특별시 서대문구 신촌로 127 신촌르메이르타운 3차 307호 (창천동)</div>
-      <div><strong>전화</strong> 02-393-1030 &nbsp; | &nbsp; <strong>이메일</strong> <a href="mailto:j.lee@ukcentre.co.kr">j.lee@ukcentre.co.kr</a></div>
+ <div class="foot">
+  <div class="box">
+    <div style="font-weight:700;margin-bottom:6px">영국유학센터 신촌지사</div>
+    <div>서울특별시 서대문구 신촌로 127 신촌르메이르타운 3차 307호 (창천동)</div>
+    <div>
+      <strong>전화</strong> 02-393-1030 &nbsp; | &nbsp;
+      <strong>홈페이지</strong>
+      <a href="https://www.ukcentre.co.kr" target="_blank" rel="noopener">www.ukcentre.co.kr</a>
     </div>
   </div>
+</div>
 
   <!-- 관심분야별 섹션 토글 -->
   <script>
